@@ -5,7 +5,6 @@ import { cookies } from "next/headers";
 
 export default async function page() {
   const cookieStore = cookies();
-  const token = (await cookieStore).get("authToken")?.value;
   const userCookie = (await cookieStore).get("userData")?.value;
 
   let user: User | undefined = undefined;

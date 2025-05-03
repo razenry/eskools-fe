@@ -37,7 +37,7 @@ export function CardForm() {
         );
       }
     } catch (error) {
-      alert("An error occurred during login. Please try again later.");
+      alert(`An error occurred during login. Please try again later. ${error}`);
     } finally {
       setIsLoading(false);
     }
