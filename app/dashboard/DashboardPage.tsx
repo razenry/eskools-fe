@@ -6,10 +6,11 @@ import ClubTab from '@/components/dashboard/ClubTab';
 import Header from '@/components/dashboard/Header';
 import SettingsTab from '@/components/dashboard/SettingsTab';
 import UserProfile from '@/components/dashboard/UserProfile';
+import { User } from '@/types/User';
 import { useState } from 'react';
 
 
-const Dashboard = () => {
+const Dashboard = ({ user }: { user?: User }) => {
   const [activeTab, setActiveTab] = useState('absensi');
 
   // Data dummy
@@ -26,10 +27,14 @@ const Dashboard = () => {
     { id: 4, name: "Paskibra", schedule: "Rabu", members: 15 },
   ];
 
+   // Safely access user data with fallbacks
+   const userName = user?.data?.data?.name || "Guest";
+   const userEmail = user?.data?.data?.email || "No email provided";
+
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <Header />
-      <UserProfile name="Beatrice Cox" email="cox21@gmail.com" />
+      <UserProfile name={userName} email={userEmail} />
 
       <main className="container mx-auto p-4">
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />

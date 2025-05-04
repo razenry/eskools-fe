@@ -1,3 +1,4 @@
+import LogoutButton from "../auth/LogoutButton";
 import SettingItem from "./SettingItem";
 
 
@@ -37,9 +38,7 @@ const SettingsTab = () => {
         {settings.map((setting, index) => (
           <SettingItem key={index} {...setting} />
         ))}
-        <button className="w-full py-3 bg-red-100 text-red-600 rounded-md hover:bg-red-200 transition-colors font-medium">
-          Keluar
-        </button>
+        <LogoutButton/>
       </div>
     </div>
   );

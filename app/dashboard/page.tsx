@@ -20,7 +20,7 @@ export default async function page() {
 
   return (
     <AuthGuard>
-      <Dashboard/>
+      <Dashboard user={user}/>
     </AuthGuard>
   );
 }
