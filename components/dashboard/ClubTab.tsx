@@ -1,11 +1,16 @@
-import ClubCard from './ClubCard';
+import { Club } from "@/types/Dashboard";
+import ClubCard from "./ClubCard";
 
-const ClubTab = ({ clubs }: { clubs: any[] }) => {
-  const handleDetail = (clubId:any) => {
+interface ClubProps {
+  clubs: Club[];
+}
+
+const ClubTab = ({ clubs }: ClubProps) => {
+  const handleDetail = (clubId: string | number) => {
     console.log(`Detail club ${clubId}`);
   };
 
-  const handleLeave = (clubId:any) => {
+  const handleLeave = (clubId: string | number) => {
     console.log(`Keluar dari club ${clubId}`);
   };
 
@@ -14,7 +19,7 @@ const ClubTab = ({ clubs }: { clubs: any[] }) => {
       <h2 className="font-bold text-lg mb-4">Eskul Saya</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {clubs.map((club) => (
-          <ClubCard 
+          <ClubCard
             key={club.id}
             club={club}
             onDetail={() => handleDetail(club.id)}
@@ -23,8 +28,17 @@ const ClubTab = ({ clubs }: { clubs: any[] }) => {
         ))}
         <div className="border-2 border-dashed rounded-lg p-4 flex items-center justify-center hover:bg-gray-50 transition-colors">
           <button className="text-blue-600 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 mr-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                clipRule="evenodd"
+              />
             </svg>
             Tambah Eskul
           </button>

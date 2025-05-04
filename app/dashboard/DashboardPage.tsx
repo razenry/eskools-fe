@@ -6,25 +6,30 @@ import ClubTab from '@/components/dashboard/ClubTab';
 import Header from '@/components/dashboard/Header';
 import SettingsTab from '@/components/dashboard/SettingsTab';
 import UserProfile from '@/components/dashboard/UserProfile';
+import { Activity, Club } from '@/types/Dashboard';
 import { User } from '@/types/User';
 import { useState } from 'react';
 
+interface DashboardPageProps {
+  user?: User;
+}
 
-const Dashboard = ({ user }: { user?: User }) => {
+const Dashboard = ({ user }: DashboardPageProps) => {
   const [activeTab, setActiveTab] = useState('absensi');
 
   // Data dummy
-  const recentActivities = [
-    { id: 1, name: "Basket", time: "15:30", date: "12 Mei 2023", status: "Hadir" },
-    { id: 2, name: "Pramuka", time: "14:00", date: "10 Mei 2023", status: "Hadir" },
-    { id: 3, name: "Robotics", time: "16:45", date: "8 Mei 2023", status: "Alpa" },
+  const recentActivities: Activity[] = [
+    { id: '1', name: "Basket", time: "15:30", date: "12 Mei 2023", status: "Hadir" },
+    { id: '2', name: "Pramuka", time: "14:00", date: "10 Mei 2023", status: "Hadir" },
+    { id: '3', name: "Robotics", time: "16:45", date: "8 Mei 2023", status: "Alpa" },
   ];
+  
 
-  const clubs = [
-    { id: 1, name: "Basket", schedule: "Senin & Kamis", members: 24 },
-    { id: 2, name: "Pramuka", schedule: "Selasa & Jumat", members: 32 },
-    { id: 3, name: "Robotics", schedule: "Rabu", members: 15 },
-    { id: 4, name: "Paskibra", schedule: "Rabu", members: 15 },
+  const clubs:Club[] = [
+    { id: '1', name: "Basket", schedule: "Senin & Kamis", members: 24 },
+    { id: '2', name: "Pramuka", schedule: "Selasa & Jumat", members: 32 },
+    { id: '3', name: "Robotics", schedule: "Rabu", members: 15 },
+    { id: '4', name: "Paskibra", schedule: "Rabu", members: 15 },
   ];
 
    // Safely access user data with fallbacks

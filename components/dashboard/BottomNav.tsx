@@ -1,4 +1,10 @@
-const BottomNav = ({ activeTab, setActiveTab }:any) => {
+interface BottomNavProps {
+  activeTab: string;
+  setActiveTab: (tabId: string) => void;
+}
+
+
+const BottomNav = ({ activeTab, setActiveTab }:BottomNavProps) => {
     const navItems = [
       { 
         id: 'absensi', 

@@ -8,7 +8,7 @@ const Header = () => {
     <header className="bg-blue-600 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div>
-          <p className="text-xl font-bold">Absensi Eskul</p>
+          <p className="text-xl font-bold">Eskools</p>
           <p className="text-sm opacity-80">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
         </div>
         <div className="relative">

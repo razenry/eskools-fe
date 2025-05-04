@@ -1,4 +1,6 @@
-const ActivityItem = ({ activity }:{ activity: any }) => {
+import { Activity } from "@/types/Dashboard";
+
+const ActivityItem = ({ activity }:{activity: Activity}) => {
     return (
       <div className="flex justify-between items-center p-2 border-b">
         <div>

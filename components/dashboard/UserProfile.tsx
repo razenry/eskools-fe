@@ -1,4 +1,9 @@
-const UserProfile = ({ name, email }: { name: string; email: string }) => {
+interface UserProfileProps {
+  name: string;
+  email: string;
+}
+
+const UserProfile = ({ name }: UserProfileProps) => {
   const initials = name
     .split(" ")
     .map((n) => n[0])
